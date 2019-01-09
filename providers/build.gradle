@@ -19,9 +19,9 @@ ext {
     bintrayRepo = 'Android'
     bintrayName = 'providers'
 
-    publishedGroupId = 'com.artear.providers'
-    libraryName = 'providers'
-    artifact = 'providers'
+    publishedGroupId = 'com.artear.multitracker'
+    libraryName = 'multitracker-providers'
+    artifact = 'multitracker-providers'
 
     libraryDescription = 'providers sample library'
 
