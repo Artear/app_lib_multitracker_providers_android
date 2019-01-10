@@ -23,7 +23,7 @@ ext {
     bintrayName = 'providers'
 
     publishedGroupId = 'com.artear.multitracker'
-    libraryName = 'providers'
+    libraryName = 'Providers'
     artifact = 'providers'
 
     libraryDescription = 'A set of common trackers for Multitracker, called providers library'
