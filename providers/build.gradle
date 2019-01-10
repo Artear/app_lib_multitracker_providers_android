@@ -20,7 +20,7 @@ apply plugin: 'kotlin-android-extensions'
 
 ext {
     bintrayRepo = 'Android'
-    bintrayName = 'providers'
+    bintrayName = 'Providers'
 
     publishedGroupId = 'com.artear.multitracker'
     libraryName = 'Providers'
@@ -28,8 +28,8 @@ ext {
 
     libraryDescription = 'A set of common trackers for Multitracker, called providers library'
 
-    siteUrl = 'https://github.com/Artear/app_lib_providers_android'
-    gitUrl = 'https://github.com/Artear/app_lib_providers_android.git'
+    siteUrl = 'https://github.com/Artear/app_lib_multitracker_providers_android'
+    gitUrl = 'https://github.com/Artear/app_lib_multitracker_providers_android.git'
 
     developerId = 'artear'
     developerName = 'Artear Moviles'
