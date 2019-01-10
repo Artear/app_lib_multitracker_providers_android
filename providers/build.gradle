@@ -10,7 +10,6 @@ buildscript {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17'
-        classpath 'io.fabric.tools:gradle:1.27.0'
     }
 }
 
@@ -18,17 +17,16 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'io.fabric'
 
 ext {
     bintrayRepo = 'Android'
     bintrayName = 'providers'
 
     publishedGroupId = 'com.artear.multitracker'
-    libraryName = 'multitracker-providers'
-    artifact = 'multitracker-providers'
+    libraryName = 'providers'
+    artifact = 'providers'
 
-    libraryDescription = 'providers sample library'
+    libraryDescription = 'A set of common trackers for Multitracker, called providers library'
 
     siteUrl = 'https://github.com/Artear/app_lib_providers_android'
     gitUrl = 'https://github.com/Artear/app_lib_providers_android.git'
@@ -63,9 +61,8 @@ android {
         targetSdkVersion 28
         versionCode vCode
         versionName libraryVersion
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
     }
     buildTypes {
         release {
