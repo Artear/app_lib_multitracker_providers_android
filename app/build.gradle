@@ -51,12 +51,29 @@ dependencies {
 
     //Test
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Support
+    implementation "com.android.support:support-v4:$supportLibraryVersion"
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:animated-vector-drawable:$supportLibraryVersion"
+    implementation "com.android.support:support-media-compat:$supportLibraryVersion"
+
+    implementation "com.artear.multitracker:multitracker:$multiTrackerVersion"
+    implementation "com.artear.tools:tools:$toolsVersion"
+
+    //Crashlytics
+    implementation("com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion@aar") {
+        transitive = true
+    }
+
+    //FireBase
+    implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    //ComScore
+    implementation "com.comscore:android-analytics:$comscoreVersion"
 }
