@@ -3,13 +3,13 @@ package com.artear.providersexample
 import android.app.Application
 import android.preference.PreferenceManager
 import com.artear.multitracker.MultiTracker
-import com.artear.multitracker.providers.addDailyMetric
+import com.artear.multitracker.providers.extensions.addDailyMetric
 import com.artear.multitracker.providers.answers.AnswersTracker
 import com.artear.multitracker.providers.comscore.ComsCoreTracker
 import com.artear.multitracker.providers.comscore.ComscoreCredentials
 import com.artear.multitracker.providers.firebase.FirebaseTracker
-import com.artear.multitracker.providers.init
-import com.artear.multitracker.providers.register
+import com.artear.multitracker.providers.extensions.init
+import com.artear.multitracker.providers.extensions.register
 import com.artear.tools.preferences.PrefsHelper
 
 

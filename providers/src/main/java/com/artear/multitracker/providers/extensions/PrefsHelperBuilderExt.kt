@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.artear.multitracker.providers
+package com.artear.multitracker.providers.extensions
 
+import com.artear.multitracker.providers.DailyPrefsKeys
 import com.artear.tools.preferences.PrefsHelper
 
 fun PrefsHelper.Builder.addDailyMetric() : PrefsHelper.Builder{
