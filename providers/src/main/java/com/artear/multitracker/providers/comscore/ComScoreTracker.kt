@@ -18,10 +18,10 @@ package com.artear.multitracker.providers.comscore
 import android.content.Context
 import com.artear.multitracker.ContextTracker
 import com.artear.multitracker.contract.send.TrackerSend
+import com.artear.tools.android.log.logD
 import com.comscore.Analytics
 import com.comscore.PublisherConfiguration
 import com.comscore.UsagePropertiesAutoUpdateMode
-import timber.log.Timber
 
 class ComsCoreTracker(context: Context, credentials: ComscoreCredentials) : ContextTracker(context) {
 
@@ -48,8 +48,10 @@ class ComsCoreTracker(context: Context, credentials: ComscoreCredentials) : Cont
         when (params) {
             is ComScoreEvent -> Analytics.notifyViewEvent(params.comScoreMap)
             is ComScoreView -> Analytics.notifyViewEvent(params.comScoreMap)
-            else -> Timber.d("The params when call send in comscore tracker %s",
-                    "must implements ComScoreEvent or ComScoreView")
+            else -> logD {
+                "The params when call send in comscore tracker " +
+                        "must implements ComScoreEvent or ComScoreView"
+            }
         }
     }
 

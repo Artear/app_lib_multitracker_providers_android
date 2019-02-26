@@ -15,7 +15,7 @@
  */
 package com.artear.multitracker.providers.extensions
 
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import com.artear.multitracker.MultiTracker
 import com.artear.multitracker.contract.send.TrackerSend
 import com.artear.multitracker.providers.firebase.FirebaseTracker

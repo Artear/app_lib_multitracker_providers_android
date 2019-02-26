@@ -22,10 +22,10 @@ import com.artear.multitracker.providers.BuildConfig
 import com.artear.multitracker.providers.DailyPrefsKeys
 import com.artear.multitracker.providers.event.ScreenEvent
 import com.artear.multitracker.providers.event.StorageEvent
-import com.artear.tools.AndroidUtils
-import com.artear.tools.preferences.PrefsHelper
-import com.artear.tools.preferences.StringPreference
-import com.artear.tools.screen.ScreenUtils
+import com.artear.tools.android.AndroidUtils
+import com.artear.tools.android.preferences.PrefsHelper
+import com.artear.tools.android.preferences.StringPreference
+import com.artear.tools.android.screen.ScreenUtils
 import java.text.SimpleDateFormat
 import java.util.*
 

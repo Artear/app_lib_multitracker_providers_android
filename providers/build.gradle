@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17'
     }
@@ -61,7 +61,7 @@ android {
         targetSdkVersion 28
         versionCode vCode
         versionName libraryVersion
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
     buildTypes {
@@ -75,17 +75,17 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //Test
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test:runner:$testRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    //Support
-    implementation "com.android.support:support-v4:$supportLibraryVersion"
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-    implementation "com.android.support:animated-vector-drawable:$supportLibraryVersion"
-    implementation "com.android.support:support-media-compat:$supportLibraryVersion"
+    //AndroidX
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.vectordrawable:vectordrawable:$vectorDrawableVersion"
+    implementation "androidx.media:media:$mediaVersion"
 
     implementation "com.artear.multitracker:multitracker:$multiTrackerVersion"
     implementation "com.artear.tools:tools:$toolsVersion"

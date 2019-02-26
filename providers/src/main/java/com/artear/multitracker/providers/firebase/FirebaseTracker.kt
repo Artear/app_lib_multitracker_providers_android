@@ -18,8 +18,8 @@ package com.artear.multitracker.providers.firebase
 import android.content.Context
 import com.artear.multitracker.ContextTracker
 import com.artear.multitracker.contract.send.TrackerSend
+import com.artear.tools.android.log.logD
 import com.google.firebase.analytics.FirebaseAnalytics
-import timber.log.Timber
 
 class FirebaseTracker(context: Context) : ContextTracker(context) {
 
@@ -29,8 +29,10 @@ class FirebaseTracker(context: Context) : ContextTracker(context) {
         when (params) {
             is FirebaseEvent -> mFireBaseAnalytics.logEvent(params.firebaseEvent, params.firebaseBundle)
             is FirebaseView -> mFireBaseAnalytics.logEvent(params.firebaseViewName, params.firebaseBundle)
-            else -> Timber.d("The params when call send in firebase tracker %s",
-                    "must implements FirebaseEvent or FirebaseView")
+            else -> logD {
+                "The params when call send in firebase tracker must implements " +
+                        "FirebaseEvent or FirebaseView"
+            }
         }
     }
 
