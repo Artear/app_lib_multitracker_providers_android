@@ -3,15 +3,14 @@ package com.artear.providersexample
 import android.app.Application
 import android.preference.PreferenceManager
 import com.artear.multitracker.MultiTracker
-import com.artear.multitracker.providers.extensions.addDailyMetric
 import com.artear.multitracker.providers.answers.AnswersTracker
 import com.artear.multitracker.providers.comscore.ComsCoreTracker
 import com.artear.multitracker.providers.comscore.ComscoreCredentials
-import com.artear.multitracker.providers.firebase.FirebaseTracker
+import com.artear.multitracker.providers.extensions.addDailyMetric
 import com.artear.multitracker.providers.extensions.init
 import com.artear.multitracker.providers.extensions.register
-import com.artear.tools.preferences.PrefsHelper
-
+import com.artear.multitracker.providers.firebase.FirebaseTracker
+import com.artear.tools.android.preferences.PrefsHelper
 
 class App : Application() {
 
@@ -25,7 +24,6 @@ class App : Application() {
             override val publisherSecret: String = ""
             override val applicationName: String = ""
             override val persistentLabel: String = ""
-
         }
 
         val trackers = setOf(FirebaseTracker(baseContext),

@@ -1,12 +1,29 @@
-# app_base_library_android
-app_base_library_android Lib 
+# Library Multitracker Providers
 
-Library for clone and have ready a library framework for start to work
+- A set of common trackers and extension functionality of Multitracker
+
+Download
+--------
+
+via Maven:
+```xml
+<dependency>
+  <groupId>com.artear.multitracker</groupId>
+  <artifactId>providers</artifactId>
+  <version>0.0.6</version>
+</dependency>
+```
+or Gradle:
+```groovy
+implementation 'com.artear.multitracker:providers:0.0.6'
+```
+UI view Lib requires at minimum Java 7 or Android 4.1.
+
 
 License
 =======
 
-    Copyright 2018 Artear S.A.
+    Copyright 2019 Artear S.A.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

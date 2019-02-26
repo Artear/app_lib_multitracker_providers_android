@@ -15,7 +15,8 @@
  */
 package com.artear.multitracker.providers
 
-import android.support.annotation.StringDef
+import androidx.annotation.StringDef
+
 
 object DailyPrefsKeys {
 
