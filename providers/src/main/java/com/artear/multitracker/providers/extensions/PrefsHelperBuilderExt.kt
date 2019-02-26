@@ -18,7 +18,6 @@ package com.artear.multitracker.providers.extensions
 import com.artear.multitracker.providers.DailyPrefsKeys
 import com.artear.tools.android.preferences.PrefsHelper
 
-fun PrefsHelper.Builder.addDailyMetric() : PrefsHelper.Builder{
+fun PrefsHelper.Builder.addDailyMetric() = apply {
     addStringPreference(DailyPrefsKeys.DAILY_METRIC, DailyPrefsKeys.DEFAULT_VALUE_DAILY_METRIC)
-    return this
 }

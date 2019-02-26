@@ -47,13 +47,9 @@ fun MultiTracker.init(context: Context, prefsHelper: PrefsHelper) {
     }
 }
 
-fun MultiTracker.register(trackers: Set<Tracker>){
-    trackers.forEach { register(it) }
-}
+fun MultiTracker.register(trackers: Set<Tracker>) = trackers.forEach { register(it) }
 
-private fun getTodayFormatted(): String {
-    return SimpleDateFormat(YYYY_MM_DD, Locale.ENGLISH).format(Date())
-}
+private fun getTodayFormatted() = SimpleDateFormat(YYYY_MM_DD, Locale.ENGLISH).format(Date())
 
 private fun needsTodayUpdate(dailyMetricPreference: StringPreference, today: String): Boolean {
     return today != dailyMetricPreference.get() || BuildConfig.DEBUG

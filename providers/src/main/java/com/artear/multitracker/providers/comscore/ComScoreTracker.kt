@@ -30,7 +30,6 @@ class ComsCoreTracker(context: Context, credentials: ComscoreCredentials) : Cont
     }
 
     init {
-
         val publisher = PublisherConfiguration.Builder()
                 .publisherId(credentials.publisherId)
                 .publisherSecret(credentials.publisherSecret)
@@ -64,7 +63,6 @@ class ComsCoreTracker(context: Context, credentials: ComscoreCredentials) : Cont
     }
 
     override fun onDestroy() {
-
     }
 
 }
