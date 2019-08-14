@@ -18,7 +18,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'com.github.ben-manes.versions' version '0.21.0'
+    id 'com.github.ben-manes.versions' version '0.22.0'
 }
 
 ext {
@@ -53,15 +53,15 @@ static def getBranchName() {
 }
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion buildVersions.targetSdk
+    buildToolsVersion buildVersions.buildTools
 
     def branch = getBranchName()
     def vCode = 0 + getVersionCode(branch)
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 28
+        minSdkVersion buildVersions.minSdk
+        targetSdkVersion buildVersions.targetSdk
         versionCode vCode
         versionName libraryVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -77,32 +77,26 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    //Test
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test:runner:$testRunnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
-
     //Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation lib.kotlin.standardLib
 
-    //AndroidX
-    implementation "androidx.appcompat:appcompat:$appCompatVersion"
-    implementation "androidx.vectordrawable:vectordrawable:$vectorDrawableVersion"
+    //Test
+    testImplementation lib.junit.library
+    testImplementation lib.androidx.testRunner
+    testImplementation lib.espresso.core
 
-    implementation "com.artear.multitracker:multitracker:$multiTrackerVersion"
-    implementation "com.artear.tools:tools:$toolsVersion"
-
-    //Crashlytics
-    implementation("com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion@aar") {
-        transitive = true
-    }
-
-    //FireBase
-    implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
-    implementation "com.jakewharton.timber:timber:$timberVersion"
+    //Artear
+    implementation lib.artear.multitracker
+    implementation lib.artear.tools
 
     //ComScore
-    implementation "com.comscore:android-analytics:$comscoreVersion"
+    implementation lib.comscore.library
+
+    //Crashlytics
+    implementation lib.crashlytics.library
+
+    //Firebase
+    implementation lib.firebase.core
 }
 
 dependencyUpdates.resolutionStrategy {
