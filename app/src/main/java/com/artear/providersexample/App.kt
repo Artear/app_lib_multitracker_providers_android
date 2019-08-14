@@ -17,7 +17,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+
 
         val credentials = object : ComscoreCredentials {
             override val publisherId: String = ""
@@ -29,6 +29,8 @@ class App : Application() {
         val trackers = setOf(FirebaseTracker(baseContext),
                 ComsCoreTracker(baseContext, credentials),
                 AnswersTracker(baseContext))
+
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
 
         //Event Trackers
         MultiTracker.instance.register(trackers)

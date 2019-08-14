@@ -10,12 +10,12 @@ via Maven:
 <dependency>
   <groupId>com.artear.multitracker</groupId>
   <artifactId>providers</artifactId>
-  <version>0.0.8</version>
+  <version>0.0.9</version>
 </dependency>
 ```
 or Gradle:
 ```groovy
-implementation 'com.artear.multitracker:providers:0.0.8'
+implementation 'com.artear.multitracker:providers:0.0.9'
 ```
 UI view Lib requires at minimum Java 7 or Android 4.1.
 
