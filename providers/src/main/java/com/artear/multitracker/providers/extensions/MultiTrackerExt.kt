@@ -20,6 +20,7 @@ import com.artear.multitracker.MultiTracker
 import com.artear.multitracker.contract.tracker.Tracker
 import com.artear.multitracker.providers.BuildConfig
 import com.artear.multitracker.providers.DailyPrefsKeys
+import com.artear.multitracker.providers.event.DarkEvent
 import com.artear.multitracker.providers.event.ScreenEvent
 import com.artear.multitracker.providers.event.StorageEvent
 import com.artear.tools.android.AndroidUtils
@@ -44,6 +45,8 @@ fun MultiTracker.init(context: Context, prefsHelper: PrefsHelper) {
                 context.resources.displayMetrics))
 
         send(StorageEvent(AndroidUtils.isInstalledOnSdCard(context)))
+
+        send(DarkEvent(context))
     }
 }
 
