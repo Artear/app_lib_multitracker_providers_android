@@ -65,7 +65,6 @@ android {
         versionCode vCode
         versionName libraryVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
     buildTypes {
         release {
