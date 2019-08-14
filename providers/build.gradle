@@ -59,6 +59,12 @@ android {
     def branch = getBranchName()
     def vCode = 0 + getVersionCode(branch)
 
+    libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${project.getName()}-${defaultConfig.versionName}-${variant.name}.aar"
+        }
+    }
+
     defaultConfig {
         minSdkVersion buildVersions.minSdk
         targetSdkVersion buildVersions.targetSdk
@@ -101,7 +107,8 @@ dependencies {
 dependencyUpdates.resolutionStrategy {
     componentSelection { rules ->
         rules.all { ComponentSelection selection ->
-            boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm', 'preview', 'b', 'ea'].any { qualifier ->
+            boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm',
+                                'preview', 'b', 'ea'].any { qualifier ->
                 selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-+]*/
             }
             if (rejected) {

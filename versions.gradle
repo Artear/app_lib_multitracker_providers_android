@@ -1,4 +1,4 @@
-ext.libraryVersion = '0.0.9'
+ext.libraryVersion = '0.0.8'
 
 def debug = [:]
 debug.minSdk = 24
